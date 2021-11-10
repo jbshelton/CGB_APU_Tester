@@ -1,0 +1,125 @@
+ROM0 bank #0:
+  SECTION: $0100-$0103 ($0004 bytes) ["boot"]
+  SECTION: $0104-$0142 ($003f bytes) ["header"]
+  SECTION: $0143-$0143 ($0001 byte) ["cgb-mode"]
+  SECTION: $0144-$014f ($000c bytes) ["header-remainder"]
+  SECTION: $0150-$049d ($034e bytes) ["main"]
+           $0150 = main
+           $0165 = main.string_u10
+           $0175 = main.end_u10
+           $0175 = test_length_counter
+           $01ae = test_volume_envelope
+           $01e6 = test_frequency_sweep
+           $0222 = pulse_width_test
+           $0271 = noise_lfsr_test
+           $029f = print_length
+           $02a7 = print_length.string_u11
+           $02b7 = print_length.end_u11
+           $0314 = print_length.string_u12
+           $0316 = print_length.end_u12
+           $0316 = print_volume
+           $031e = print_volume.string_u13
+           $032d = print_volume.end_u13
+           $0344 = print_volume.string_u14
+           $0347 = print_volume.end_u14
+           $0347 = print_sweep
+           $034f = print_sweep.string_u15
+           $035d = print_sweep.end_u15
+           $038d = print_sweep.string_u16
+           $038f = print_sweep.end_u16
+           $038f = print_pulse
+           $0397 = print_pulse.string_u17
+           $03ab = print_pulse.end_u17
+           $03b3 = print_pulse.string_u18
+           $03bb = print_pulse.end_u18
+           $03e1 = print_pulse.string_u19
+           $03e9 = print_pulse.end_u19
+           $040f = print_pulse.string_u20
+           $0417 = print_pulse.end_u20
+           $043d = print_pulse.string_u21
+           $0445 = print_pulse.end_u21
+           $0463 = print_noise
+           $046b = print_noise.string_u22
+           $047e = print_noise.end_u22
+           $0497 = done
+    SLACK: $3c62 bytes
+
+ROMX bank #1:
+  SECTION: $4000-$49e7 ($09e8 bytes) ["lib"]
+           $4000 = OldSkoolOutlineThick
+           $4800 = WaitVBlank
+           $4807 = LcdOffSafe
+           $4813 = MemCopy
+           $481c = LoadFont8000
+           $4821 = LoadFont
+           $4824 = LoadFont.skip
+           $482e = MemSet
+           $4837 = MemSetSmall
+           $483c = LoadObjectPalette
+           $4840 = LoadBackgroundPalette
+           $4842 = LoadPalette
+           $484c = ResetDisplay
+           $4885 = ResetDisplay.notCGB
+           $489d = ShadesOfGrayPalette
+           $48a5 = ShadesOfGrayPalette.end
+           $48a5 = PrintNewLine
+           $48b4 = PrintNewLine.scroll_check
+           $48ca = PrintNewLine.scrolling
+           $48e3 = PrintCharacter
+           $4908 = PrintDecimal
+           $491a = PrintDecimal.one_hundreds
+           $4921 = PrintDecimal.tens
+           $4931 = PrintDecimal.units
+           $4938 = PrintHexU16
+           $493d = PrintHexU16NoDollar
+           $4945 = PrintHexU8
+           $494c = PrintHexU8NoDollar
+           $4953 = PrintHexNibble
+           $495e = PrintHexNibble.letter
+           $4963 = PrintString
+           $496c = ResetCursor
+           $497b = Delay100000MCycles
+           $497e = Delay90000MCycles
+           $4981 = Delay80000MCycles
+           $4984 = Delay70000MCycles
+           $4987 = Delay60000MCycles
+           $498a = Delay50000MCycles
+           $498d = Delay40000MCycles
+           $4990 = Delay30000MCycles
+           $4993 = Delay20000MCycles
+           $4996 = Delay10000MCycles
+           $4999 = Delay9000MCycles
+           $499c = Delay8000MCycles
+           $499f = Delay7000MCycles
+           $49a2 = Delay6000MCycles
+           $49a5 = Delay5000MCycles
+           $49a8 = Delay4000MCycles
+           $49ab = Delay3000MCycles
+           $49ae = Delay2000MCycles
+           $49b1 = Delay1000MCycles
+           $49b4 = Delay900MCycles
+           $49b7 = Delay800MCycles
+           $49ba = Delay700MCycles
+           $49bd = Delay600MCycles
+           $49c0 = Delay500MCycles
+           $49c3 = Delay400MCycles
+           $49c6 = Delay300MCycles
+           $49c9 = Delay200MCycles
+           $49cc = Delay100MCycles
+           $49cf = Delay90MCycles
+           $49d2 = Delay80MCycles
+           $49d5 = Delay70MCycles
+           $49d8 = Delay60MCycles
+           $49db = Delay50MCycles
+           $49de = Delay40MCycles
+           $49e1 = Delay30MCycles
+           $49e4 = Delay20MCycles
+           $49e7 = Delay10MCycles
+    SLACK: $3618 bytes
+
+WRAM0 bank #0:
+  SECTION: $c000-$c002 ($0003 bytes) ["print_cursor"]
+           $c000 = wPrintCursorAddress
+           $c002 = wPrintScrolling
+    SLACK: $0ffd bytes
+
